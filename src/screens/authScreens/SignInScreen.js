@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-import { View, Text, StyleSheet, Dimensions, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { colors, parameters, title } from '../../global/styles';
 import * as Animatable from 'react-native-animatable';
 
@@ -15,7 +15,10 @@ export default function SignInScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
+            {/* Header */}
             <Header title="MY ACCOUNT" type="arrow-left" navigation={navigation} />
+
+            {/* Title */}
             <View style={{ marginLeft: 20, marginTop: 10 }}>
                 <Text style={title}>Sign-In</Text>
             </View>
@@ -52,8 +55,17 @@ export default function SignInScreen({ navigation }) {
                     </Animatable.View>
                 </View>
             </View>
+
+            {/* Login */}
             <View style={{ marginHorizontal: 20, marginTop: 30 }}>
-                <Button title="SIGN IN" buttonStyle={parameters.styledButton} titleStyle={parameters.buttonTitle} />
+                <Button
+                    title="SIGN IN"
+                    buttonStyle={parameters.styledButton}
+                    titleStyle={parameters.buttonTitle}
+                    onPress={() => {
+                        navigation.navigate('HomeScreen');
+                    }}
+                />
             </View>
             <View style={{ alignItems: 'center', marginTop: 15 }}>
                 <Text style={{ ...styles.text1, textDecorationLine: 'underline' }}> Forgot Password ?</Text>
@@ -62,6 +74,7 @@ export default function SignInScreen({ navigation }) {
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>OR</Text>
             </View>
 
+            {/* Other Way To Login */}
             <View
                 style={{
                     marginHorizontal: 20,
@@ -96,8 +109,9 @@ export default function SignInScreen({ navigation }) {
                 />
             </View>
 
+            {/* Info */}
             <View style={{ marginTop: 25, marginLeft: 20 }}>
-                <Text style={{ ...styles.text1 }}>New on XpressFood ?</Text>
+                <Text style={{ ...styles.text1 }}>New on FoodDelivery ?</Text>
             </View>
 
             <View style={{ alignItems: 'flex-end', marginHorizontal: 20 }}>

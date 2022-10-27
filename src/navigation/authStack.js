@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { createNativeStackNavigator, TransitionPresets } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInWelcomeScreen from '../screens/authScreens/SignInWelcomeScreen';
 import SignInScreen from '../screens/authScreens/SignInScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,8 +15,6 @@ export default function AuthStack() {
                 component={SignInWelcomeScreen}
                 options={{
                     headerShown: false,
-                    // ...TransitionPresets.ModalTransition,
-                    // ...TransitionPresets.RevealFromBottomAndroid
                 }}
             />
 
@@ -24,8 +23,13 @@ export default function AuthStack() {
                 component={SignInScreen}
                 options={{
                     headerShown: false,
-                    // ...TransitionPresets.ModalTransition,
-                    // ...TransitionPresets.RevealFromBottomAndroid
+                }}
+            />
+            <Stack.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{
+                    headerShown: false,
                 }}
             />
         </Stack.Navigator>
