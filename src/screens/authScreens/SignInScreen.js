@@ -62,8 +62,16 @@ export default function SignInScreen({ navigation }) {
                     title="SIGN IN"
                     buttonStyle={parameters.styledButton}
                     titleStyle={parameters.buttonTitle}
+                    // onPress={() => {
+                    //     navigation.navigate('HomeScreen');
+                    // }}
+                    //12
+                    // onPress={() => {
+                    //     navigation.navigate('RootClientTabs');
+                    // }}
+                    //13 1x
                     onPress={() => {
-                        navigation.navigate('HomeScreen');
+                        navigation.navigate('DrawerNavigator');
                     }}
                 />
             </View>

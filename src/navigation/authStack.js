@@ -3,7 +3,8 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInWelcomeScreen from '../screens/authScreens/SignInWelcomeScreen';
 import SignInScreen from '../screens/authScreens/SignInScreen';
-import HomeScreen from '../screens/HomeScreen';
+import RestaurantMapScreen from '../screens/RestaurantsMapScreen';
+import DrawerNavigator from './DrawerNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,8 +27,15 @@ export default function AuthStack() {
                 }}
             />
             <Stack.Screen
-                name="HomeScreen"
-                component={HomeScreen}
+                name="DrawerNavigator"
+                component={DrawerNavigator}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="RestaurantMapScreen"
+                component={RestaurantMapScreen}
                 options={{
                     headerShown: false,
                 }}

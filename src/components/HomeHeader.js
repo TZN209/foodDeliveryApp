@@ -3,15 +3,23 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Icon, withBadge } from '@rneui/themed';
 import { colors, parameters } from '../global/styles';
-
-export default function HomeHeader() {
+export default function HomeHeader({ navigation }) {
     const BadgeIcon = withBadge(0)(Icon);
 
     return (
         <View style={styles.header}>
             {/* Menu Icon */}
             <View style={{ alignItems: 'center', justifyContent: 'center', marginLeft: 15 }}>
-                <Icon type="material-community" name="menu" color={colors.cardbackground} size={32} />
+                <Icon
+                    type="material-community"
+                    name="menu"
+                    color={colors.cardbackground}
+                    size={32}
+                    //13 2x
+                    onPress={() => {
+                        navigation.toggleDrawer();
+                    }}
+                />
             </View>
 
             {/* Title */}
