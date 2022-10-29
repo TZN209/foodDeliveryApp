@@ -7,6 +7,7 @@ import { Icon } from '@rneui/themed';
 
 export default function Header({ title, type, navigation }) {
     return (
+        // Header belong SignInScreen.js
         <View style={styles.header}>
             <View style={{ marginLeft: 20 }}>
                 <Icon

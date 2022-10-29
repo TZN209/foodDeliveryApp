@@ -42,6 +42,7 @@ export default function SearchComponent() {
 
     return (
         <View style={{ alignItems: 'center' }}>
+            {/* Header */}
             <TouchableWithoutFeedback
                 onPress={() => {
                     setModalVisible(true);
@@ -63,6 +64,7 @@ export default function SearchComponent() {
                 <View style={styles.modal}>
                     <View style={styles.view1}>
                         <View style={styles.TextInput}>
+                            {/* Arrow left */}
                             <Animatable.View animation={textInputFossued ? 'fadeInRight' : 'fadeInLeft'} duration={400}>
                                 <Icon
                                     name={textInputFossued ? 'arrow-back' : 'search'}
@@ -76,6 +78,7 @@ export default function SearchComponent() {
                                 />
                             </Animatable.View>
 
+                            {/* Input Search */}
                             <TextInput
                                 style={{ width: '90%' }}
                                 placeholder=""
@@ -90,6 +93,7 @@ export default function SearchComponent() {
                                 onChangeText={handleSearch}
                             />
 
+                            {/* Icon cancel */}
                             <Animatable.View animation={textInputFossued ? 'fadeInLeft' : ''} duration={400}>
                                 <Icon
                                     name={textInputFossued ? 'cancel' : null}
@@ -105,13 +109,14 @@ export default function SearchComponent() {
                         </View>
                     </View>
 
+                    {/* List Item */}
                     <FlatList
                         data={data}
                         renderItem={({ item }) => (
                             <TouchableOpacity
                                 onPress={() => {
                                     Keyboard.dismiss;
-                                    navigation.navigate('RestaurantSearchScreen', { item: item.name });
+                                    navigation.navigate('SearchResultScreen', { item: item.name });
                                     setModalVisible(false);
                                     setTextInputFossued(true);
                                 }}

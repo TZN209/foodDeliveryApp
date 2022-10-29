@@ -164,3 +164,50 @@ export const restaurantsData = [
         id: 3,
     },
 ];
+
+// Restaurants and Foods Filtering
+export const productData = [
+    {
+        name: 'Hand cut chips',
+        price: 29.3,
+        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg',
+        details: 'Two 100% fresh beef burger patties that are hot,deliciously',
+        id: 0,
+    },
+    {
+        name: 'Big Mac',
+        price: 50.8,
+        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg',
+        details: 'McFeast features two 100% fresh beef burger patties that are hot',
+        id: 1,
+    },
+    {
+        name: 'Chicken Burger',
+        price: 70,
+        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg',
+        details: '',
+        id: 2,
+    },
+
+    {
+        name: 'Hand cut chips',
+        price: 29.3,
+        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg',
+        details: 'Two 100% fresh beef burger patties that are hot,deliciously',
+        id: 3,
+    },
+    {
+        name: 'Big Mac',
+        price: 70.2,
+        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg',
+        details: 'McFeast features two 100% fresh beef burger patties that are hot',
+        id: 4,
+    },
+    {
+        name: 'Chicken Burger',
+        price: 70,
+        image: 'https://images.pexels.com/photos/2271107/pexels-photo-2271107.jpeg',
+        details: '',
+        id: 5,
+    },
+];

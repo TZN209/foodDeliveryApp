@@ -15,7 +15,7 @@ export default function SignInScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            {/* Header */}
+            {/* Header from Header.js */}
             <Header title="MY ACCOUNT" type="arrow-left" navigation={navigation} />
 
             {/* Title */}

@@ -5,9 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { colors } from '../global/styles';
 import { Icon } from '@rneui/themed';
 import HomeScreen from '../screens/HomeScreen';
-import SearchScreen from '../screens/SearchScreen';
 import MyOrdersScreen from '../screens/MyOrdersScreen';
 import MyAccountScreen from '../screens/MyAccountScreen';
+import { ClientStack } from './clientStack';
 
 const ClientTabs = createBottomTabNavigator();
 
@@ -30,7 +30,7 @@ export default function RootClientTabs() {
 
             <ClientTabs.Screen
                 name="SearchScreen"
-                component={SearchScreen}
+                component={ClientStack}
                 options={{
                     headerShown: false,
                     tabBarLabel: 'Search',
