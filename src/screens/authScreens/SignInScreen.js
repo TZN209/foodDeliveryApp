@@ -35,7 +35,7 @@ export default function SignInScreen({ navigation }) {
                         <Icon name="lock" iconStyle={{ color: colors.grey3 }} type="material" style={{}} />
                     </Animatable.View>
                     <TextInput
-                        style={{ width: '80%' }}
+                        style={{ flex: 1 }}
                         placeholder="Password"
                         ref={textInput2}
                         onFocus={() => {

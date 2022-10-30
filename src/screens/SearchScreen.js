@@ -10,7 +10,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 export default function SearchScreen({ navigation }) {
     return (
         // Top Categories
-        <View style={{ flex: 1, marginBottom: 10 }}>
+        <View style={{ flex: 1, marginBottom: 10, paddingTop: 20 }}>
             <SearchComponent />
             <View style={{ marginTop: 10 }}>
                 <View>

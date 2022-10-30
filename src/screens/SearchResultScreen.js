@@ -10,6 +10,7 @@ const SearchResultScreen = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
             <View>
+                {/* Content */}
                 <FlatList
                     style={{ backgroundColor: colors.cardbackground }}
                     data={restaurantsData}
@@ -24,8 +25,15 @@ const SearchResultScreen = ({ navigation, route }) => {
                             farAway={item.farAway}
                             businessAddress={item.businessAddress}
                             productData={item.productData}
+                            OnPressRestaurantCard={() => {
+                                navigation.navigate('RestaurantHomeScreen', {
+                                    id: index,
+                                    restaurant: item.restaurantName,
+                                });
+                            }}
                         />
                     )}
+                    // Header
                     ListHeaderComponent={
                         <View>
                             <Text style={styles.listHeader}>
@@ -45,6 +53,7 @@ export default SearchResultScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingTop: 20,
     },
 
     listHeader: { color: colors.grey1, fontSize: 20, paddingHorizontal: 10, paddingVertical: 10, fontWeight: 'bold' },
