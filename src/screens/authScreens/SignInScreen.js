@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { colors, parameters, title } from '../../global/styles';
 import * as Animatable from 'react-native-animatable';
@@ -6,8 +6,11 @@ import { Formik } from 'formik';
 import { Icon, Button, SocialIcon } from '@rneui/themed';
 import Header from '../../components/Header';
 import auth from '@react-native-firebase/auth';
+import { SignInContext } from '../../contexts/authContext';
 
 export default function SignInScreen({ navigation }) {
+    const { dispatchSignedIn } = useContext(SignInContext);
+
     const [textInput2Fossued, setTextInput2Fossued] = useState(false);
     const textInpput1 = useRef(1);
     const textInput2 = useRef(2);
@@ -17,7 +20,7 @@ export default function SignInScreen({ navigation }) {
             const { password, email } = data;
             const user = await auth().signInWithEmailAndPassword(email, password);
             if (user) {
-                console.log('USER SIGNED-IN');
+                dispatchSignedIn({ type: 'UPDATE_SIGN_IN', payload: { userToken: 'signed-in' } });
             }
         } catch (error) {
             Alert.alert(error.name, error.message);
