@@ -33,8 +33,10 @@ const SignUpScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
+            {/* Header */}
             <Header title="MY ACCOUNT" type="arrow-left" navigation={navigation} />
             <ScrollView keyboardShouldPersistTaps="always">
+                {/* Sign In */}
                 <View style={styles.view1}>
                     <Text style={styles.text1}>Sign-Up</Text>
                 </View>
@@ -46,9 +48,12 @@ const SignUpScreen = ({ navigation }) => {
                 >
                     {(props) => (
                         <View style={styles.view2}>
+                            {/* Slogan */}
                             <View>
                                 <Text style={styles.text2}>New on XpressFood ?</Text>
                             </View>
+
+                            {/* SĐT */}
                             <View style={styles.view6}>
                                 <TextInput
                                     placeholder="Mobile Number"
@@ -59,6 +64,8 @@ const SignUpScreen = ({ navigation }) => {
                                     value={props.values.phone_number}
                                 />
                             </View>
+
+                            {/* Name */}
                             <View style={styles.view6}>
                                 <TextInput
                                     placeholder="Name"
@@ -69,6 +76,7 @@ const SignUpScreen = ({ navigation }) => {
                                 />
                             </View>
 
+                            {/* Family name */}
                             <View style={styles.view6}>
                                 <TextInput
                                     placeholder="Family name"
@@ -78,6 +86,8 @@ const SignUpScreen = ({ navigation }) => {
                                     value={props.values.family_name}
                                 />
                             </View>
+
+                            {/* Email */}
                             <View style={styles.view10}>
                                 <View>
                                     <Icon name="email" style={styles.email} color={colors.grey3} type="material" />
@@ -93,6 +103,7 @@ const SignUpScreen = ({ navigation }) => {
                                 </View>
                             </View>
 
+                            {/* Password */}
                             <View style={styles.view14}>
                                 <Animatable.View
                                     animation={passwordFocussed ? 'fadeInRight' : 'fadeInLeft'}
@@ -126,6 +137,7 @@ const SignUpScreen = ({ navigation }) => {
                                 </Animatable.View>
                             </View>
 
+                            {/* Infomation */}
                             <View style={styles.view15}>
                                 <Text style={styles.text3}>By creating or logging into an account you are</Text>
                                 <View style={styles.view16}>
@@ -135,6 +147,8 @@ const SignUpScreen = ({ navigation }) => {
                                 </View>
                                 <Text style={styles.text4}> Privacy Statement</Text>
                             </View>
+
+                            {/* Account */}
                             <View style={styles.view17}>
                                 <Button
                                     title="Create my account"
@@ -146,9 +160,13 @@ const SignUpScreen = ({ navigation }) => {
                         </View>
                     )}
                 </Formik>
+
+                {/* OR */}
                 <View style={styles.view18}>
                     <Text style={styles.text5}>OR</Text>
                 </View>
+
+                {/* Bottom */}
                 <View style={styles.view19}>
                     <View style={styles.view20}>
                         <Text style={styles.text6}>Already have an account with XpressFood ?</Text>

@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { colors, parameters } from '../../global/styles';
+import { SignInContext } from '../../contexts/authContext';
+import auth from '@react-native-firebase/auth';
 
 import Swiper from 'react-native-swiper';
 
 import { Button } from '@rneui/themed';
 
 export default function SignInWelcomeScreen({ navigation }) {
+    const { dispatchSignedIn } = useContext(SignInContext);
+
+    useEffect(() => {
+        auth().onAuthStateChanged((user) => {
+            if (user) {
+                dispatchSignedIn({ type: 'UPDATE_SIGN_IN', payload: { userToken: 'signed-in' } });
+            } else {
+                dispatchSignedIn({ type: 'UPDATE_SIGN_IN', payload: { userToken: null } });
+            }
+        });
+    }, []);
+
     return (
         <View style={{ flex: 1 }}>
             {/* Title */}
