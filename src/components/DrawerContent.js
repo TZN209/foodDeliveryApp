@@ -42,6 +42,7 @@ export default function DrawerContent(props) {
                             <Text style={{ color: colors.cardbackground, fontSize: 14 }}>vuhieu@gmail.com</Text>
                         </View>
                     </View>
+
                     <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', paddingBottom: 5 }}>
                         <View style={{ flexDirection: 'row', marginTop: 10 }}>
                             <View style={{ marginLeft: 10, alignItems: 'center', justifyContent: 'center' }}>
